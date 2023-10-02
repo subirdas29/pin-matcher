@@ -12,8 +12,6 @@ function getPin (){
     }
 }
 
-
-
 function genaratePin(){
     const pincode = Math.round(Math.random()*10000)// number ta empty string diya jog korar karone number ta string hoi gese
     
@@ -25,4 +23,29 @@ document.getElementById('gen-btn').addEventListener('click',function(){
    
     const inputField = document.getElementById('input-area');
     inputField.value = code
+})
+
+document.getElementById('num-btn').addEventListener('click',function(event){
+     const num = event.target.innerText;
+     const inputNum = document.getElementById('input-num')
+     const prevNum = inputNum.value;
+
+     if(isNaN(num)){
+        if(num === 'C'){
+            inputNum.value = ''
+        }
+        else if(num === '<'){
+            const deletenum = prevNum.split('')
+            deletenum.pop()
+            const newNum = deletenum.join('')
+            inputNum.value = newNum
+        }
+        
+     }
+     else{
+        
+       const typedNum = prevNum + num;
+       inputNum.value = typedNum;
+     }
+     
 })

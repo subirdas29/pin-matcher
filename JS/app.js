@@ -49,3 +49,25 @@ document.getElementById('num-btn').addEventListener('click',function(event){
      }
      
 })
+
+document.getElementById('sub-btn').addEventListener('click',function(){
+    const typedNums = document.getElementById('input-num')
+    const typedNumValue = typedNums.value
+    const genrateNum = document.getElementById('input-area')
+    const generateNumValue = genrateNum.value
+    const rightMsg = document.getElementById('right')
+    const wrongMsg = document.getElementById('wrong')
+
+    if(typedNumValue === generateNumValue){
+        
+        rightMsg.style.display = 'block';
+        wrongMsg.style.display = 'none'
+    }
+    else{
+        
+        wrongMsg.style.display = 'block';
+        rightMsg.style.display = 'none'
+    }
+
+
+})
